@@ -30,7 +30,6 @@ body, html{
   top:5px;
   left: 5px;
   margin:5px;
-  animation: moveEnemies 10s forwards;
 }
 #good-gay{
   position:absolute;

@@ -8,10 +8,12 @@ const Enemy = ({num, start,lose}) => start &&
     if(el.classList.contains('exist')){
         let interval = setInterval(() => {
             let {top,height} = el.getBoundingClientRect();
-            if(top+height>window.innerHeight)
+            if(top+height>window.innerHeight){
+                clearInterval(interval);
                 lose();
+            }
         }, 50);
     }
- }} src={imgUrl} alt="" className="enemy exist" id={`enemy${num}`}/>)
+ }} src={imgUrl} alt="" className="enemy exist" id={`enemy${num}`} style={{animation:`moveEnemies ${5}s forwards`}}/>)
 
 export default Enemy;
