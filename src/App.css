@@ -1,38 +1,55 @@
-.App {
+body, html{
+  margin:0; padding:0;
+  overflow: hidden;
+}
+.h1{
+  position:absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fefefe;
   text-align: center;
+  text-transform: uppercase;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  margin: 25px 0;
+  padding: 30px;
+  line-height: 60px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 4px #fefefe, 0 0 5px #fefefe, 0 0 7.5px #fefefe, 0 0 10px blueviolet, 0 0 17.5px blueviolet, 0 0 40px blueviolet, 0 0 50px blueviolet, 0 0 75px blueviolet;
+}
+.bg-img{
+  width:100vw; height:100vh;
+  background-image:url("https://storywarren.com/wp-content/uploads/2016/09/space-1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.enemy{
+  width:50px;
+  position:relative; 
+  top:5px;
+  left: 5px;
+  margin:5px;
+  animation: moveEnemies 10s forwards;
+}
+#good-gay{
+  position:absolute;
+  bottom:5px;
+  z-index:5;
+}
+.shoot-img{
+  height:40px;
+  position: absolute;
+  z-index:1;
+  animation: shoot 1s forwards;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@keyframes shoot{
+  0% {transform:translateY(0%);}
+  100% {bottom: 110%;}
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes moveEnemies{
+ from {transform:translateY(0%);}
+ to {top:100%;}
 }
